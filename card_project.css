@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 *{
     margin: 0;
@@ -6,25 +6,113 @@
     box-sizing: border-box;
 }
 
-body{
-    font: 1em sans-serif;
-    min-height: 100vh;
-
-    background-color: #475569;
-    background-image: radial-gradient(whitesmoke,#475569);
+img{
+    display: block; /*as images are inline elemnt they tend to have small gaps display block removes those gaps */
+    max-width: 100%; /* so the image doesn't exceed its container*/
+    height: auto; /* as we have added height in img in the html code to prevent content layout shift so it's better to add height here as well */
 }
 
-img {display: block;}
+/* wrap */
+.nowrap{
+    white-space: nowrap; /*so that name doesn't break into two lines.like jane dev rel. with white-space: nowrap this name stays in one line. */
+}
+/* ||General Style */
 
-header,main,footer{
-    display: grid;
-    place-content: center;
+html{
+    scroll-behavior: smooth;/*in nav when we press the name it smoothly goes to the name. totally optional for smooth transsition of the page.*/
+}
+
+
+body{
+    font: 1.5rem "Nunito", sans-serif;
+    min-height: 100vh;
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke,#475569);
+    display: flex;
+    flex-direction: column;
+}
+
+header,
+footer{
+    position: sticky;
+    background-color: #1e293b;
+    color: white;
+    text-align: center;
 }
 
 header{
-    position: sticky;
     top: 0;
 }
+
+nav{
+    background-color: white;
+    border: 2px solid black;
+    padding: 0.5rem;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav a,
+nav a:visited{
+    color: black;
+}
+
+nav a:hover,
+nav a:focus{
+    color: blue;
+}
+
+main{
+    flex-grow: 1;/* so that the content grow with the page size */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
+    align-items: center;
+}
+
+footer {
+    bottom: 0;
+}
+
+/*Profile card */
+.card{
+    scroll-margin-top: 8rem; /*when we scroll this begins the scoll not directly from the nav rather after a gap below the name bar */
+    width: min(100%, 350px);/* this means take up the full width of the picture but don't exceed above 350px.However you can go below 350px */
+    background-color: #cbd5e1; /* the background color inside the border */
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 1rem;
+    /* we need center the writings inside the card so we use flex.*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* notice that through quotation line went center but name didn't cause name like Joe coder is figurecaption. We have to do it separately. */
+
+.card figure{
+    display: flex; /* this is so that the figure doesn't wrap o break when screen shrinks.*/
+    flex-flow: column nowrap;
+}
+
+.card img {
+    border: 5px double black;
+    border-radius: 50%;
+}
+
+/*now for the figcaption or name.*/
+
+.card figcaption {
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 0.5rem;
+    text-align: center;
+    /* no need to make flex we can just do text-aling*/
+}
+
 
 .flex{
 
