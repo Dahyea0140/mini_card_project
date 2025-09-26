@@ -1,0 +1,66 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font: 1em sans-serif;
+    min-height: 100vh;
+
+    background-color: #475569;
+    background-image: radial-gradient(whitesmoke,#475569);
+}
+
+img {display: block;}
+
+header,main,footer{
+    display: grid;
+    place-content: center;
+}
+
+header{
+    position: sticky;
+    top: 0;
+}
+
+.flex{
+
+    margin-left: 1rem;
+    border: 5px solid grey;
+    width: 25%;
+    height: 50vh;
+    border-radius: 20%;
+
+}
+
+.pro_pic_1
+{
+    width: 35%;
+}
+
+.pro_pic_1 img{
+    width: 100%;
+    height: auto;
+    min-width: 100px ;
+    border: 2px solid black;
+    border-radius: 70%;  
+}
+
+.pro_pic_caption{
+    position: absolute;
+    left: -10000px;
+
+}
+
+.matt_head{
+    display: grid;
+    justify-content: center;
+}
+
+.matt_stuff{
+    display: grid;
+    justify-content: center;
+}
